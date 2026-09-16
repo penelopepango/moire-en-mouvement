@@ -1,4 +1,4 @@
-let numLines = 100;
+let numLines = 300;
 let angleOffset = 5.01;
 
 function setup() {
@@ -12,7 +12,7 @@ function draw() {
   translate(width / 2, height / 2);
 
   // Automatic movement
-  let t = millis() * 0.0002;
+  let t = millis() * 0.00012;
 
   let autoX = sin(t * 0.7) * width * 0.3;
   let autoY = cos(t * 0.5) * height * 0.3;
