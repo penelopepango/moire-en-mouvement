@@ -8,9 +8,9 @@ function setup() {
 }
 
 function draw() {
-  // White background
   background(255);
 
+  push();
   translate(width / 2, height / 2);
 
   // Automatic movement
@@ -19,7 +19,7 @@ function draw() {
   let autoX = sin(t * 0.7) * width * 0.3;
   let autoY = cos(t * 0.5) * height * 0.3;
 
-  // Mouse / touch position
+  // Mouse / touch
   let inputX = 0;
   let inputY = 0;
 
@@ -39,11 +39,9 @@ function draw() {
   let drawSize = max(width, height) * 1.5;
   let spacing = drawSize / numLines;
 
-  // Calculate distance once per frame
-  let d = sqrt(fx * fx + fy * fy);
-  let alpha = map(d, 0, width / 2, 255, 80, true);
-
-  stroke(0, alpha);
+  // Black lines
+  stroke(0);
+  strokeWeight(1);
 
   // Draw lines
   for (let i = 0; i < numLines; i++) {
@@ -59,15 +57,18 @@ function draw() {
     line(x1, y, x2, y);
 
     // Diagonal lines
-    let x3 = cos(angle + angleOffset * t) * drawSize / 2;
-    let y3 = sin(angle + angleOffset * t) * drawSize / 2;
+    let rotation = angle + angleOffset * t;
+
+    let x3 = cos(rotation) * drawSize / 2;
+    let y3 = sin(rotation) * drawSize / 2;
 
     line(x1, y, x3, y3);
     line(x2, y, x3, y3);
   }
+
+  pop();
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
-
