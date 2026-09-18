@@ -1,10 +1,10 @@
-let numLines = 200;
+let numLines = 300;
 let angleOffset = 5.01;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   pixelDensity(1);
-  frameRate(40);
+  frameRate(50);
 }
 
 function draw() {
