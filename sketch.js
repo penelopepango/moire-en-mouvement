@@ -1,4 +1,3 @@
-```javascript
 let numLines = 150;
 let angleOffset = 5.01;
 
@@ -71,4 +70,4 @@ function draw() {
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
-```
+
